@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helloworld-dep
+  name: helloworld
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helloworld-pod
+  template:
+    metadata:
+      labels:
+        app: helloworld-pod
+    spec:
+      containers:
+      - image: gcr.io/hal-spinnaker/sample-sb
+        name: helloword-container
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: gcr-json-key

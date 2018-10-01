@@ -1,0 +1,4 @@
+FROM openjdk:8-jdk
+ADD build/libs/*.jar /app/app.jar
+EXPOSE 8080
+CMD ["java", "-jar", "/app/app.jar"]

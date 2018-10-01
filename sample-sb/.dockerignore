@@ -1,0 +1,4 @@
+# Ignore everything
+*
+# Include only jar files in build directory
+!build/libs/*.jar
